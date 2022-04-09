@@ -1,13 +1,14 @@
 import React from 'react';
-import useFirebase from '../../hooks/useFirebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase.init';
 
 const Home = () => {
-    const {user} = useFirebase()
+    const [user] = useAuthState(auth)
     return (
         <div>
             <h1>This is Home</h1>
             <p>Current user is : {user? user.displayName : 'Nobody'}</p>
-            <img src={user? user.photoURL : ''} alt="" />
+            <img style={{'width': '300px'}} src={user? user.photoURL : ''} alt="" />
         </div>
     );
 };

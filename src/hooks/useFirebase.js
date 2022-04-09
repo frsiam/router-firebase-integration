@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     console.log(user)
 
-    const signInWithGoogle = () => {
+    const handlesignInWithGoogle = () => {
         signInWithPopup(auth, googleProvider)
         .then(res => {
             const user = res.user
@@ -30,7 +30,7 @@ const useFirebase = () => {
         })
     },[])
 
-    return {user, signInWithGoogle, handleSignOut}
+    return {user, handlesignInWithGoogle, handleSignOut}
 }
 
 export default useFirebase;
