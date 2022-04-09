@@ -7,7 +7,7 @@ const Login = () => {
         <div>
             <h1>Please Login</h1>
             <div className='my-3'>
-                <button className='btn btn-info' onClick={signInWithGoogle}>Google SignIn</button>
+                <button className='btn btn-info' onClick={signInWithGoogle}>Sign-in by Google</button>
             </div>
             <form>
                 <input className='my-2' type="email" name="email" id="" placeholder='Your Email' />

@@ -6,12 +6,13 @@ const googleProvider = new GoogleAuthProvider()
 
 const useFirebase = () => {
     const [user, setUser] = useState({})
+    console.log(user)
 
     const signInWithGoogle = () => {
         signInWithPopup(auth, googleProvider)
         .then(res => {
             const user = res.user
-            console.log(user)
+            console.log('sign in successfully')
             setUser(user)
         })
     }
@@ -20,6 +21,7 @@ const useFirebase = () => {
         signOut(auth)
         .then(() => {
             console.log('signout successfully')
+            setUser({})
         })
     }
     useEffect( () => {
