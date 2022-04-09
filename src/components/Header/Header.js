@@ -14,6 +14,10 @@ const Header = () => {
             <Link to='/orders'>Orders</Link>
             <Link to='/register'>Register</Link>
             {
+                user &&
+                <Link to='/privet'>Privet</Link>
+            }
+            {
                 user?.uid 
                 ?
                 <button onClick={()=>signOut(auth)} className='btn btn-danger'>Sign Out</button>
